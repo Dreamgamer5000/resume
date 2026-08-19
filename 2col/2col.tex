@@ -1,0 +1,290 @@
+%--------------------------------------------------
+% Modern 2-Column Resume – Rejit B Antony
+%--------------------------------------------------
+\documentclass[10pt, a4paper]{article}
+
+% ---------- packages ----------
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+\usepackage{eso-pic}
+\usepackage[sfdefault]{plex-sans}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\renewcommand{\baselinestretch}{1.2}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- page geometry (A4) ----------
+\geometry{
+  top=0in,
+  bottom=0in,
+  left=0in,
+  right=0in,
+  noheadfoot,
+  paperwidth=210mm,
+  paperheight=297mm
+}
+
+% ---------- colours ----------
+\definecolor{sidebar}{HTML}{BBBBBB}
+\definecolor{accent}{HTML}{222222}
+\definecolor{accentlight}{HTML}{333333}
+\definecolor{bodytext}{HTML}{2D2D2D}
+\definecolor{lightgray}{HTML}{777777}
+\definecolor{mwhite}{HTML}{1A1A1A}
+\definecolor{rule}{HTML}{555555}
+
+% ---------- Full-page sidebar background ----------
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \color{sidebar}\rule{0.32\paperwidth}{\paperheight}%
+  }%
+}
+
+% ---------- hyperref ----------
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% ---------- section styles (RIGHT column) ----------
+\titleformat{\section}
+  {\color{bodytext}\large\bfseries}
+  {}{0em}{}
+  [{\color{rule}\titlerule[1.5pt]}\vspace{2pt}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% ---------- helper macros ----------
+\newcommand{\entry}[4]{%
+  \vspace{2pt}
+  {\bfseries\color{bodytext} #1}\hfill{\small\color{lightgray} #3}\\
+  {\small\itshape\color{accent} #2}\hfill{\small\color{lightgray} #4}
+  \vspace{2pt}
+}
+
+\newenvironment{bullets}{%
+  \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \small\color{bodytext}
+}{\end{itemize}}
+
+\newcommand{\skilllabel}[1]{%
+  {\small\bfseries\color{accentlight} #1}\par\vspace{1pt}%
+}
+\newcommand{\skillval}[1]{%
+  {\footnotesize\color{mwhite} #1}\par\vspace{5pt}%
+}
+
+\newcommand{\leftsection}[1]{%
+  \vspace{8pt}%
+  {\color{accent}\large\bfseries #1}\\[-2pt]%
+  {\color{accent}\rule{\linewidth}{1pt}}\par\vspace{4pt}%
+}
+
+\newcommand{\contactrow}[2]{%
+  {\color{accent} #1}~{\footnotesize\color{mwhite} #2}\par\vspace{3pt}%
+}
+
+%==========================================================
+\begin{document}
+\pagestyle{empty}
+\color{bodytext}
+
+%--------------------------------------------------
+%  TWO-COLUMN LAYOUT  (left 32% | right 68%)
+%--------------------------------------------------
+\columnratio{0.32}
+\setlength{\columnsep}{0pt}
+
+\begin{paracol}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LEFT COLUMN  (sidebar)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{leftcolumn}
+\color{mwhite}
+\hspace{8pt}\begin{minipage}[t]{\dimexpr\linewidth-16pt}
+
+  % ---- Name ----
+  \vspace{16pt}
+  {\fontsize{17}{21}\selectfont\bfseries\color{mwhite} REJIT B~{\color{accent}ANTONY}}\\[4pt]
+%   {\footnotesize\color{accentlight}\itshape Computer Science Student}
+
+  \vspace{-10pt}
+
+  % ---- Contact ----
+  \leftsection{Contact}
+  \contactrow{\faIcon{mobile}}{+91 8978672798}
+  \contactrow{\faIcon{envelope}}{\href{mailto:antonyrejit@gmail.com}{antonyrejit@gmail.com}}
+  \contactrow{\faIcon{linkedin}}{\href{https://linkedin.com/in/rejitantony0903}{rejitantony0903}}
+  \contactrow{\faIcon{github}}{\href{https://github.com/dreamgamer5000}{dreamgamer5000}}
+
+  \vspace{10pt}
+
+
+
+  % ---- Education ----
+  \leftsection{Education}
+
+  {\small\bfseries\color{mwhite} Vellore Institute of Technology}\hfill{\footnotesize\color{accentlight} Chennai, India}\\
+  {\footnotesize\color{accentlight} B.Tech -- Computer Science Engineering}\\
+  {\footnotesize\color{accentlight} July 2023 -- Present}\\
+  {\footnotesize\color{accent} CGPA: \textbf{9.12}}
+
+  \vspace{8pt}
+
+  {\small\bfseries\color{mwhite} Navdeep Public School}\hfill{\footnotesize\color{accentlight} Kollam, Kerala}\\
+  {\footnotesize\color{accentlight} High School -- CBSE}\\
+  {\footnotesize\color{accentlight} May 2021 -- May 2023}\\
+  {\footnotesize\color{accent} Graduated with \textbf{94.2\%} in Grade 12}
+
+  \vspace{10pt}
+
+  % ---- Skills ----
+  \leftsection{Skills}
+
+  \skilllabel{Languages}
+  \skillval{Python \textbullet{} Java \textbullet{} JavaScript \textbullet{} LaTeX}
+  \vspace{2pt}
+  \skilllabel{Frameworks \& AI}
+  \skillval{Gemini API \textbullet{} PyTorch \textbullet{} TensorFlow \textbullet{} \\React \textbullet{} Node.js \textbullet{} Express.js \textbullet{} \\Scikit-learn \textbullet{} Pandas \textbullet{} NumPy}
+  \vspace{2pt}
+  \skilllabel{Databases}
+  \skillval{MongoDB \textbullet{} SQL \textbullet{} SQLite3}
+  \vspace{2pt}
+  \skilllabel{Tools}
+  \skillval{Gemini CLI / Agents \textbullet{} Git \textbullet{} VS Code \textbullet{} \\JupyterLab \textbullet{} Adobe Photoshop \textbullet{} \\Unity \textbullet{} Godot}
+  \vspace{2pt}
+  \skilllabel{Operating Systems}
+  \skillval{Linux (Arch, WSL, CLI) \textbullet{} Windows}
+
+  \vspace{8pt}
+
+
+  % ---- Certifications ----
+  \leftsection{Certifications}
+
+  {\footnotesize\color{mwhite}
+  \begin{itemize}[leftmargin=1.1em, itemsep=4pt, topsep=2pt, parsep=0pt]
+    \item[\color{accent}\textbullet] \textbf{1st Place -- FOSSIT}\\(LUGVITC, April 2024)
+    \item[\color{accent}\textbullet] \textbf{Volunteer Recognition Award}\\-- Raptee.HV, CodeVolt (Mar 2025)
+    \item[\color{accent}\textbullet] \textbf{Full Stack MERN} Certification\\(Delta Course) -- ApnaCollege
+    \item[\color{accent}\textbullet] \textbf{Agile \& Design Thinking}\\-- IBM
+    \item[\color{accent}\textbullet] \textbf{DevOps Fundamentals}\\-- IBM
+  \end{itemize}
+  }
+
+\end{minipage}
+\end{leftcolumn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  RIGHT COLUMN  (main content)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{rightcolumn}
+\hspace{10pt}\begin{minipage}[t]{\dimexpr\linewidth-20pt}
+\vspace{16pt}
+
+% ---- Projects ----
+\section{Projects}
+
+
+\entry{PICSHARE: AI-Powered Cloud Photo Gallery \& Storage Pipeline}%
+      {Open-Source Contribution}%
+      {\href{https://github.com/Dreamgamer5000/rabagot}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Architected a \textbf{3-tier hybrid storage pipeline} with Google Drive cold storage and automated raw file purging, slashing server disk usage by \textbf{98.8\%} (\textbf{300+ GB to 3.5 GB} per 10k photos).
+  \item Engineered an on-demand \textbf{WebP caching tier}, reducing image payload by \textbf{95\%} (\textbf{30 MB to 300 KB}) and eliminating cloud API rate limits to achieve sub-10ms modal load latency.
+  \item Built a client-side \textbf{HTML5 Canvas compression engine} in TypeScript, downscaling \textbf{10--30 MB} uploads to \textbf{$<$200 KB in $<$50ms} to eliminate HTTP 413 errors while preserving \textbf{InsightFace} facial recognition accuracy.
+\end{bullets}
+
+\vspace{4pt}
+
+% \entry{Reinforcement Learning -- BipedalWalker (TD3 \& TD3-FORK)}%
+%       {PyTorch \textbullet{} Gymnasium \textbullet{} CUDA}%
+%       {\href{https://github.com/Dreamgamer5000/bipedal-walker}{\faIcon{github}~GitHub}}%
+%       {}
+% \begin{bullets}
+%   \item Implemented TD3 from scratch in PyTorch (replay buffer, twin critics, actor, Polyak target updates) with no RL library dependencies; trained on BipedalWalker-v3 to avg reward \textbf{+280/300} in \textbf{1M steps} on personal GPU.
+%   \item Built a live \textbf{6-panel} Matplotlib training dashboard (reward curves, Q-value drift, action distributions, TD error) and a threaded \texttt{pygame} render window with HUD overlay displaying training in real time without blocking the training loop.
+%   \item Extended the agent with TD3-FORK (forward dynamics model predicting next state from current state-action) to address long-horizon credit assignment failure on BipedalWalkerHardcore-v3; reward improved from \textbf{-40 to +100+} within \textbf{900k steps}.
+% \end{bullets}
+
+\vspace{4pt}
+
+\entry{Placement Tracker Platform (Full-Stack Features \& Data Pipelines)}%
+      {TypeScript \textbullet{} Svelte \textbullet{} SQLite3}%
+      {\href{https://github.com/dreamgamer5000}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Engineered granular placement tracking and shortlisting pipelines using \textbf{Svelte} and \textbf{SQLite}.
+  \item Architected data import pipelines processing \textbf{15,000+} student and company records via \textbf{TypeScript} scripts, ensuring robust \textbf{data integrity and mapping accuracy}.
+  \item Executed a structural database migration from legacy student IDs to a unified \textbf{NeoID} architecture, implementing efficient SQL joins and pagination to slash query latency from \textbf{2000ms to 50ms}.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{Image Denoising Autoencoder}%
+      {TensorFlow \textbullet{} Keras \textbullet{} Python}%
+      {\href{https://github.com/kaezrr/image-denoiser-scaler}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Built a hybrid Inception-ResNet denoising autoencoder in TensorFlow/Keras trained on DIV2K, using Inception blocks \textbf{(1$\times$1, 3$\times$3, 5$\times$5)} and stacked ResNet residual blocks across a \textbf{3-stage} encoder.
+  \item Implemented a U-Net style decoder with skip connections and mixed-precision training (\texttt{float16}) to preserve spatial detail while halving activation VRAM consumption.
+  \item Engineered a memory-efficient pipeline using a custom Keras \texttt{Sequence} generator for on-the-fly noise augmentation across \textbf{5000 patches} from \textbf{800 source images}.
+\end{bullets}
+
+% \vspace{4pt}
+% \entry{HackHub Game -- OctoRhythm}%
+%       {Godot \textbullet{} GDScript}%
+%       {\href{https://github.com/bawling-hackhub/hackhub-game}{\faIcon{github}~GitHub}}%
+%       {HackHub 2025}
+% \begin{bullets}
+%   \item Developed OctoRhythm, a rhythm-based game for HackHub 2025 using the Godot engine and GDScript.
+%   \item Designed timing-based scoring and dynamic difficulty adjustment to enhance player engagement.
+%   \item Created and integrated sprites and animations, ensuring a cohesive visual style.
+%   \item Collaborated with a team to optimize performance and troubleshoot issues for a stable release.
+% \end{bullets}
+
+\vspace{4pt}
+
+
+% ---- Extracurricular ----
+\section{Extracurricular Activities}
+
+\entry{The Linux Club}{Media Lead}{VIT Chennai}{June 2024 -- April 2026}
+\begin{bullets}
+  \item Directed content photography and videography, curating and managing a 100GB+ media repository to drive social media campaigns and boost community engagement at VIT Chennai.
+  \item Designed event websites and promotional posters for club events and open-source initiatives.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{The Robotics Club}{Media \& Design Lead}{VIT Chennai}{April 2025 -- April 2026}
+\begin{bullets}
+  \item Designed promotional posters, banners, and visual assets for robotics events and competitions.
+  \item Managed event photography and media content, streamlining cloud storage uploads and social media distribution to maximize club visibility and outreach.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{CodeVolt '25 Hackathon}{Volunteer}{VIT Chennai}{March 2025}
+\begin{bullets}
+  \item Supported event coordination, ensuring a seamless experience for participants and judges.
+  \item Assisted teams with technical queries and troubleshooting during the hackathon.
+  \item Collaborated with organizers and volunteers for smooth event execution.
+\end{bullets}
+
+\end{minipage}
+\end{rightcolumn}
+
+\end{paracol}
+\end{document}

@@ -1,0 +1,227 @@
+%-------------------------
+% Resume in Latex
+% Based on Jake's Resume Template
+% ATS-Friendly Single Column
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.6in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\pdfgentounicode=1
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\Large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1\vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.3in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================
+\begin{document}
+
+%-----------HEADING-----------
+\begin{center}
+  {\Huge \scshape \textbf{Rejit B Antony}} \\ \vspace{6pt}
+  \small
+  \faIcon{mobile}~\href{tel:+918978672798}{+91 8978672798}~$|$~
+  \faIcon{envelope}~\href{mailto:antonyrejit@gmail.com}{antonyrejit@gmail.com}~$|$~
+  \faIcon{linkedin}~\href{https://linkedin.com/in/rejitantony0903}{rejitantony0903}~$|$~
+  \faIcon{github}~\href{https://github.com/dreamgamer5000}{dreamgamer5000}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Vellore Institute of Technology}{Chennai, India}
+    {Bachelor of Technology -- Computer Science Engineering}{July 2023 -- Present}
+  \resumeItemListStart
+    \resumeItem{CGPA: \textbf{9.12}}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Navdeep Public School}{Kollam, Kerala}
+    {High School -- CBSE}{May 2021 -- May 2023}
+  \resumeItemListStart
+    \resumeItem{Graduated with \textbf{94.2\%} overall score in Grade 12.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{PICSHARE: AI-Powered Cloud Photo Gallery \& Storage Pipeline} $|$ \emph{Open-Source Contribution}}
+    {\href{https://github.com/Dreamgamer5000/rabagot}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Architected a \textbf{3-tier hybrid storage pipeline} with Google Drive cold storage and automated raw file purging, slashing server disk usage by \textbf{98.8\%} (\textbf{300+ GB to 3.5 GB} per 10k photos).}
+    \resumeItem{Engineered an on-demand \textbf{WebP caching tier}, reducing image payload by \textbf{95\%} (\textbf{30 MB to 300 KB}) and eliminating cloud API rate limits to achieve sub-10ms modal load latency.}
+    \resumeItem{Built a client-side \textbf{HTML5 Canvas compression engine} in TypeScript, downscaling \textbf{10--30 MB} uploads to \textbf{$<$200 KB in $<$50ms} to eliminate HTTP 413 errors while preserving \textbf{InsightFace} facial recognition accuracy.}
+  \resumeItemListEnd
+
+  % \resumeProjectHeading
+  %   {\textbf{Reinforcement Learning -- BipedalWalker (TD3 \& TD3-FORK)} $|$ \emph{PyTorch, Gymnasium, CUDA}}
+  %   {\href{https://github.com/Dreamgamer5000/bipedal-walker}{\faIcon{github} GitHub}}
+  % \resumeItemListStart
+  %   \resumeItem{Implemented TD3 from scratch in PyTorch (replay buffer, twin critics, actor, Polyak target updates) with no RL library dependencies; trained on BipedalWalker-v3 to avg reward \textbf{+280/300} in \textbf{1M steps} on personal GPU.}
+  %   \resumeItem{Built a live \textbf{6-panel} Matplotlib training dashboard (reward curves, Q-value drift, action distributions, TD error) and a threaded \texttt{pygame} render window with HUD overlay displaying training in real time without blocking the training loop.}
+  %   \resumeItem{Extended the agent with TD3-FORK (forward dynamics model predicting next state from current state-action) to address long-horizon credit assignment failure on BipedalWalkerHardcore-v3; reward improved from \textbf{-40 to +100+} within \textbf{900k steps}.}
+  % \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Placement Tracker Platform (Full-Stack Features \& Data Pipelines)} $|$ \emph{TypeScript, Svelte, SQLite3}}
+    {\href{https://github.com/dreamgamer5000}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Engineered granular placement tracking and shortlisting pipelines using \textbf{Svelte} and \textbf{SQLite}.}
+    \resumeItem{Architected data import pipelines processing \textbf{15,000+} student and company records via \textbf{TypeScript} scripts, ensuring robust \textbf{data integrity and mapping accuracy}.}
+    \resumeItem{Executed a structural database migration from legacy student IDs to a unified \textbf{NeoID} architecture, implementing efficient SQL joins and pagination to slash query latency from \textbf{2000ms to 50ms}.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Image Denoising Autoencoder} $|$ \emph{TensorFlow, Keras, Python}}
+    {\href{https://github.com/kaezrr/image-denoiser-scaler}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Built a hybrid Inception-ResNet denoising autoencoder in TensorFlow/Keras trained on DIV2K, using Inception blocks \textbf{(1$\times$1, 3$\times$3, 5$\times$5)} and stacked ResNet residual blocks across a \textbf{3-stage} encoder.}
+    \resumeItem{Implemented a U-Net style decoder with skip connections and mixed-precision training (\texttt{float16}) to preserve spatial detail while halving activation VRAM consumption.}
+    \resumeItem{Engineered a memory-efficient pipeline using a custom Keras \texttt{Sequence} generator for on-the-fly noise augmentation across \textbf{5000 patches} from \textbf{800 source images}.}
+  \resumeItemListEnd
+
+  % \resumeProjectHeading
+  %   {\textbf{HackHub Game -- OctoRhythm} $|$ \emph{Godot, GDScript}}
+  %   {\href{https://github.com/bawling-hackhub/hackhub-game}{\faIcon{github} GitHub}}
+  % \resumeItemListStart
+  %   \resumeItem{Developed OctoRhythm, a rhythm-based game for HackHub 2025 using the Godot engine and GDScript.}
+  %   \resumeItem{Designed timing-based scoring and dynamic difficulty adjustment to enhance player engagement.}
+  %   \resumeItem{Created and integrated sprites and animations, ensuring a cohesive visual style.}
+  %   \resumeItem{Collaborated with a team to optimize performance and troubleshoot issues for a stable release.}
+  % \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\vspace{-12pt}
+
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Python, Java, JavaScript, LaTeX \\
+    \textbf{Frameworks \& AI:} Gemini API, PyTorch, TensorFlow, Keras, Scikit-learn, React, Astro, Node.js, Express.js, Pandas, NumPy \\
+    \textbf{Databases:} MongoDB, SQL, SQLite3 \\
+    \textbf{Tools:} Gemini CLI / AI Agents, Git, VS Code, JupyterLab, Google Sheets, Obsidian, Adobe Photoshop, Unity, Godot \\
+    \textbf{Operating Systems:} Linux (Arch, WSL, CLI), Windows
+  }}
+\end{itemize}
+
+\vspace{-12pt}
+
+
+%-----------EXTRACURRICULAR-----------
+\section{Extracurricular Activities}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {The Linux Club}{VIT Chennai}
+    {Media Lead}{June 2024 -- April 2026}
+  \resumeItemListStart
+    \resumeItem{Directed content photography and videography, curating and managing a 100GB+ media repository to drive social media campaigns and boost community engagement at VIT Chennai.}
+    \resumeItem{Designed event websites and promotional posters for club events and open-source initiatives.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {The Robotics Club}{VIT Chennai}
+    {Media \& Design Lead}{April 2025 -- April 2026}
+  \resumeItemListStart
+    \resumeItem{Designed promotional posters, banners, and visual assets for robotics events and competitions.}
+    \resumeItem{Managed event photography and media content, streamlining cloud storage uploads and social media distribution to maximize club visibility and outreach.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {CodeVolt '25 Hackathon}{VIT Chennai}
+    {Volunteer}{March 2025}
+  \resumeItemListStart
+    \resumeItem{Supported event coordination, ensuring a seamless experience for participants and judges.}
+    \resumeItem{Assisted teams with technical queries and troubleshooting during the hackathon.}
+    \resumeItem{Collaborated with organizers and volunteers for smooth event execution.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{1st Place -- FOSSIT} (Free and Open-Source Software Event) -- LUGVITC, April 2024 \\
+    \textbf{Volunteer Recognition Award} -- Raptee.HV, CodeVolt Hackathon, March 2025 \\
+    \textbf{Full Stack MERN} Certification (Delta Course) -- ApnaCollege \\
+    \textbf{Agile \& Design Thinking} -- IBM \\
+    \textbf{DevOps Fundamentals} -- IBM
+  }}
+\end{itemize}
+
+\end{document}

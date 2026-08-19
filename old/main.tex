@@ -1,0 +1,265 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\fontsize{16}{18}\selectfont
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}lcr}
+      \small#1 & \small#2 & \hspace{9cm}\small#3 \\ 
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape REJIT B ANTONY} \\ \vspace{8pt}
+    \small
+    \faIcon{mobile}
+    \href{callto:antonyrejit@gmail.com:}{{+91 8978672798}} $ |  $
+   \faIcon{envelope}
+    \href{mailto:antonyrejit@gmail.com:}{{antonyrejit@gmail.com}} $ |  $
+    \faIcon{linkedin}
+    \href{https://www.linkedin.com/in/rejitantony0903}{{rejitantony0903}} $  | $
+    \faIcon{github}
+    \href{https://github.com/dreamgamer5000}
+    {{dreamgamer5000}}
+\end{center}
+
+\centering
+% \textit{A sophomore at VIT Chennai, passionate about cryptography, secure systems, 
+% and the practical application of theoretical concepts. Actively involved in technical 
+% communities. Confident in contributing to impactful research at EPFL,
+%  focusing on advancing privacy-preserving systems to address critical real-world challenges.}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Vellore Institute of Technology}{Chennai, India}
+      {Bachelor of Technology - Computer Science Engineering}{Aug 2023 -- present}
+      \resumeItemListStart
+        \resumeItem{CGPA: 9.25}
+       
+        \resumeItem{\textbf{Relevant Coursework} - Structured and Object Oriented Programming, Computer Networks\\
+          Data Structures and Algorithms,
+         Artificial Intelligence, Machine Learning \\
+
+         
+} 
+% Digital Systems Design,
+        
+      \resumeItemListEnd 
+      
+      \vspace{8pt}
+      
+    \resumeSubheading
+      {Navdeep Public School}{Kollam, Kerala}
+      {High School (CBSE)}{Aug 2021 -- Aug 2023}
+      \resumeItemListStart
+        \resumeItem{Graduated with a 94.2\% overall score in Grade 12, demonstrating strong academic performance.}
+      \resumeItemListEnd\vspace{4pt}
+    
+    
+  \resumeSubHeadingListEnd
+
+
+
+% -------------------- PROJECTS --------------------
+\section{Projects}
+    \resumeSubHeadingListStart
+        % \resumeProjectHeading
+        % {\textbf{Personal Budget Management Using Excel}}{}
+        % {}
+        % \resumeItemListStart
+        %     \resumeItem{Developed and maintained a comprehensive Excel-based budget analysis system for personal finances over the past three years.}
+        %     \resumeItem{Customized the Excel sheets to align with personal spending categories, recurring expenses, and savings goals.}
+        %     \resumeItem{Designed formulas and pivot tables for automated calculations, data summarization, and expense tracking.}
+        %     \resumeItem{Regularly updated and optimized the sheet to improve usability. Ensured compatibility and shareability of the format, allowing its use across multiple devices and by others with minimal training or customization.}
+        % \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{\href{https://github.com/bawling-hackhub/hackhub-game}{HackHub Game - OctoRhythm}}}{}
+        {}
+        \resumeItemListStart
+        \resumeItem{Developed OctoRhythm, a rhythm-based game created for HackHub 2025, using the Godot game engine and GDScript.}
+        \resumeItem{Designed and implemented game mechanics, including timing-based scoring and dynamic difficulty adjustment, to enhance player engagement.}
+        \resumeItem{Created and integrated assets such as sprites and animations, ensuring a cohesive visual style.}
+        \resumeItem{Collaborated with a team to optimize game performance and troubleshoot issues, leading to a stable release.}
+        \resumeItemListEnd
+        
+        \resumeProjectHeading
+        {\textbf{\href{https://github.com/kaezrr/image-denoiser-scaler}{Image Denoising Autoencoder}}}{}
+        {}
+        \resumeItemListStart
+            \resumeItem{Built a hybrid Inception-ResNet denoising autoencoder in TensorFlow/Keras trained on DIV2K, using Inception blocks (1×1, 3×3, 5×5 branches) and stacked ResNet residual blocks across a 3-stage encoder.}
+            \resumeItem{Implemented a U-Net style decoder with skip connections and mixed-precision training (\texttt{float16} activations) to preserve spatial detail while halving activation VRAM consumption.}
+            \resumeItem{Engineered a memory-efficient pipeline using a custom Keras \texttt{Sequence} generator for on-the-fly noise augmentation across 5000 training patches extracted from 800 source images.}
+        \resumeItemListEnd
+        % \resumeProjectHeading
+        % {\textbf{Home Automation with Voice and Gesture Control} $|$ \footnotesize\emph{Team Project}}{}
+        % {}
+        % \resumeItemListStart
+        % \resumeItem{Designed a smart home automation system enabling appliance control via voice commands and hand gestures.}  
+        % \resumeItem{Integrated Arduino Uno, HC-05 Bluetooth module, Python (OpenCV), and MIT App Inventor for seamless operation.}  
+        % \resumeItem{Implemented gesture recognition with OpenCV and serial communication for reliable input processing.}  
+        % \resumeItem{Built a custom MIT mobile app featuring speech recognition for voice-activated appliance control.}  
+        % \resumeItem{Optimized circuit design using L293D motor driver and LED indicators for efficient switching and motor control.}  
+        
+            % \resumeItemListEnd
+       
+    \resumeSubHeadingListEnd
+  
+% -------------------- SKILLS --------------------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    
+
+    \textbf{Languages:} C/C++, Python, Java, JavaScript, LaTeX  \\
+    \textbf{Frameworks \& Libraries:} React, Astro, Node.js, Express.js, Scikit-learn, Pandas, NumPy \\ %Flask, JUnit, WordPress, Material-UI, FastAPI}
+    \textbf{Databases:} MongoDB, SQL \\
+    \textbf{Tools:} VS Code, JupyterLab, Google Sheets (Excel), Obsidian, Adobe Photoshop, DaVinci Resolve, Unity, Godot \\% IntelliJ IDEA, LT-Spice, Jupyter}
+    % \textbf{Game Engine:} Godot, Unity \\
+    \textbf{Operating Systems:} Linux (Arch-based, WSL, CLI), Windows \\
+    
+     
+     %\textbf{Libraries}{: PyTorch, Scikit-learn, Pandas, SciPy, NumPy, Tkinter, Matplotlib} \\
+     
+    }}
+ \end{itemize}
+
+
+% -------------------- Extracurricular Activity --------------------
+\section{Extracurricular Activities}
+  \resumeSubHeadingListStart
+
+        \resumeProjectHeading
+          {\textbf{THE LINUX CLUB} $|$ \footnotesize\emph{Media Lead}}{}
+          {\hspace{1.1cm}June 2024 -- present}
+          \resumeItemListStart
+              \resumeItem{Active member responsible for content photography, promotion and engaging with the community at VIT Chennai.}
+          \resumeItemListEnd
+
+          % \resumeProjectHeading
+          % {\textbf{ICTF CHALLENGES}}{}
+          % {\hspace{2.2cm}Sept 2024 -- present}
+          % \resumeItemListStart
+          %     \resumeItem{Consistently tackling cryptographic challenges, improving problem-solving skills and understanding of encryption algorithms.}
+          % \resumeItemListEnd
+        
+          \vspace{-0.5cm}
+        \resumeProjectHeading
+          {\textbf{CODEVOLT' 25 HACKATHON} $|$ 
+          \footnotesize\emph{Volunteer}}{}
+          {\hspace{.5cm}March 2025}
+          \resumeItemListStart
+          \resumeItem{Supported event coordination, ensuring a seamless experience for participants and judges.}  
+          \resumeItem{Assisted teams with technical queries and troubleshooting during the hackathon.}  
+          \resumeItem{Collaborated with organizers and volunteers for smooth event execution.}  
+          
+        \resumeItemListEnd
+
+
+        \resumeProjectHeading
+          {\textbf{VITISH - INTERNAL SMART INDIA HACKATHON} $|$ \footnotesize\emph{Top 99}}{}
+          {\hspace{-3cm}Sept 2023}
+          \resumeItemListStart
+          \resumeItem{Qualified the internal rounds of one of India's largest hackathons, competing against peers in solving real-world problems presented by government and industry partners.}
+          \resumeItem{Collaborated with a team to ideate and develop a blast prediction model using linear regression.}
+          \resumeItem{Gained hands-on experience in rapid prototyping, teamwork, and problem-solving under time constraints.}
+          
+          \resumeItemListEnd
+          
+
+        
+    \resumeSubHeadingListEnd 
+
+    \section{Certifications}
+        \resumeItemListStart
+            \resumeItem{First Place in 'FOSSIT' (Free and Open-Source Software event) organized by LUGVITC on April 2024.}
+            \resumeItem{Awarded by Raptee.HV for contributions as a volunteer in organizing the CodeVolt Hackathon.}
+            \resumeItem{Full Stack (MERN) Certification (Delta Course) -- ApnaCollege}
+            % \resumeItem{Applied linear algebra – NPTEL}
+            % \resumeItem{Variational calculus and its applications – NPTEL}
+        \resumeItemListEnd    
+\end{document}
