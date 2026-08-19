@@ -5,7 +5,7 @@ VERSION="$1"
 
 if [ -z "$VERSION" ]; then
   echo "Error: Version parameter is missing."
-  echo "Usage: ./upload.sh <version> (e.g., ./upload.sh v3)"
+  echo "Usage: ./upload.sh <version> (e.g., ./upload.sh 3)"
   exit 1
 fi
 
@@ -41,11 +41,17 @@ if ! git remote | grep -q "^origin$"; then
   git remote add origin https://github.com/dreamgamer5000/resume.git
 fi
 
+# Clean cached build artifacts tracked before .gitignore was added
+git rm -r --cached 2col/*.aux 2col/*.log 2col/*.fls 2col/*.fdb_latexmk 2col/*.out 2col/*.toc \
+                   jakes_template_prope/*.aux jakes_template_prope/*.log jakes_template_prope/*.fls jakes_template_prope/*.fdb_latexmk jakes_template_prope/*.out \
+                   old/*.aux old/*.log old/*.fls old/*.fdb_latexmk old/*.out old/*.synctex.gz \
+                   texput.log 2>/dev/null || true
+
 echo "Staging and committing files..."
 git add .
 git commit -m "Update resume version ${VERSION}" || echo "No new changes to commit."
 
-echo "Pushing to GitHub (dreamgamer5000/resume)..."
-git push -u origin main
+echo "Pushing to GitHub (force update)..."
+git push -u origin main --force
 
 echo "Done! Version ${VERSION} uploaded successfully."
