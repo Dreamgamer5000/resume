@@ -1,0 +1,249 @@
+%--------------------------------------------------
+% Modern 2-Column Resume Template
+%--------------------------------------------------
+\documentclass[10pt, a4paper]{article}
+
+% ---------- packages ----------
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+\usepackage{eso-pic}
+\usepackage[sfdefault]{plex-sans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- page geometry (A4) ----------
+\geometry{
+  top=0in,
+  bottom=0in,
+  left=0in,
+  right=0in,
+  noheadfoot,
+  paperwidth=210mm,
+  paperheight=297mm
+}
+
+% ---------- colours ----------
+\definecolor{sidebar}{HTML}{BBBBBB}
+\definecolor{accent}{HTML}{222222}
+\definecolor{accentlight}{HTML}{333333}
+\definecolor{bodytext}{HTML}{2D2D2D}
+\definecolor{lightgray}{HTML}{777777}
+\definecolor{mwhite}{HTML}{1A1A1A}
+\definecolor{rule}{HTML}{555555}
+
+% ---------- Full-page sidebar background ----------
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \color{sidebar}\rule{0.32\paperwidth}{\paperheight}%
+  }%
+}
+
+% ---------- hyperref ----------
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% ---------- section styles (RIGHT column) ----------
+\titleformat{\section}
+  {\color{bodytext}\large\bfseries}
+  {}{0em}{}
+  [{\color{rule}\titlerule[1.5pt]}\vspace{2pt}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% ---------- helper macros ----------
+\newcommand{\entry}[4]{%
+  \vspace{2pt}
+  {\bfseries\color{bodytext} #1}\hfill{\small\color{lightgray} #3}\\
+  {\small\itshape\color{accent} #2}\hfill{\small\color{lightgray} #4}
+  \vspace{2pt}
+}
+
+\newenvironment{bullets}{%
+  \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \small\color{bodytext}
+}{\end{itemize}}
+
+\newcommand{\skilllabel}[1]{%
+  {\small\bfseries\color{accentlight} #1}\par\vspace{1pt}%
+}
+\newcommand{\skillval}[1]{%
+  {\footnotesize\color{mwhite} #1}\par\vspace{5pt}%
+}
+
+\newcommand{\leftsection}[1]{%
+  \vspace{8pt}%
+  {\color{accent}\large\bfseries #1}\\[-2pt]%
+  {\color{accent}\rule{\linewidth}{1pt}}\par\vspace{4pt}%
+}
+
+\newcommand{\contactrow}[2]{%
+  {\color{accent} #1}~{\footnotesize\color{mwhite} #2}\par\vspace{3pt}%
+}
+
+%==========================================================
+\begin{document}
+\pagestyle{empty}
+\color{bodytext}
+
+%--------------------------------------------------
+%  TWO-COLUMN LAYOUT  (left 32% | right 68%)
+%--------------------------------------------------
+\columnratio{0.32}
+\setlength{\columnsep}{0pt}
+
+\begin{paracol}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LEFT COLUMN  (sidebar)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{leftcolumn}
+\color{mwhite}
+\hspace{8pt}\begin{minipage}[t]{\dimexpr\linewidth-16pt}
+
+  % ---- Name ----
+  \vspace{16pt}
+  {\fontsize{17}{21}\selectfont\bfseries\color{mwhite} FIRSTNAME~{\color{accent}LASTNAME}}\\[4pt]
+
+  \vspace{-10pt}
+
+  % ---- Contact ----
+  \leftsection{Contact}
+  \contactrow{\faIcon{mobile}}{+1 (234) 567-8900}
+  \contactrow{\faIcon{envelope}}{\href{mailto:your.email@example.com}{your.email@example.com}}
+  \contactrow{\faIcon{linkedin}}{\href{https://linkedin.com/in/yourprofile}{linkedin.com/in/yourprofile}}
+  \contactrow{\faIcon{github}}{\href{https://github.com/yourusername}{github.com/yourusername}}
+
+  \vspace{10pt}
+
+  % ---- Education ----
+  \leftsection{Education}
+
+  {\small\bfseries\color{mwhite} University / College Name}\hfill{\footnotesize\color{accentlight} City, Country}\\
+  {\footnotesize\color{accentlight} B.S. in Computer Science}\\
+  {\footnotesize\color{accentlight} Aug 2022 -- Present}\\
+  {\footnotesize\color{accent} GPA: \textbf{3.9 / 4.0}}
+
+  \vspace{8pt}
+
+  {\small\bfseries\color{mwhite} High School Name}\hfill{\footnotesize\color{accentlight} City, Country}\\
+  {\footnotesize\color{accentlight} High School Diploma}\\
+  {\footnotesize\color{accentlight} Aug 2020 -- May 2022}\\
+  {\footnotesize\color{accent} Honors / Distinction}
+
+  \vspace{10pt}
+
+  % ---- Skills ----
+  \leftsection{Skills}
+
+  \skilllabel{Languages}
+  \skillval{Python \textbullet{} TypeScript \textbullet{} JavaScript \textbullet{} C++ \textbullet{} Java \textbullet{} SQL \textbullet{} LaTeX}
+  \vspace{2pt}
+  \skilllabel{Frameworks \& Libraries}
+  \skillval{React \textbullet{} Next.js \textbullet{} Node.js \textbullet{} \\FastAPI \textbullet{} PyTorch \textbullet{} TensorFlow \textbullet{} \\Express.js \textbullet{} Pandas \textbullet{} NumPy}
+  \vspace{2pt}
+  \skilllabel{Databases}
+  \skillval{PostgreSQL \textbullet{} MongoDB \textbullet{} Redis \textbullet{} SQLite}
+  \vspace{2pt}
+  \skilllabel{Tools \& Platforms}
+  \skillval{Git \textbullet{} Docker \textbullet{} GitHub Actions \textbullet{} \\Linux (Bash/CLI) \textbullet{} AWS / GCP \textbullet{} VS Code}
+  \vspace{2pt}
+  \skilllabel{Operating Systems}
+  \skillval{Linux (Arch, Ubuntu, CLI) \textbullet{} Windows}
+
+  \vspace{8pt}
+
+  % ---- Certifications ----
+  \leftsection{Certifications}
+
+  {\footnotesize\color{mwhite}
+  \begin{itemize}[leftmargin=1.1em, itemsep=4pt, topsep=2pt, parsep=0pt]
+    \item[\color{accent}\textbullet] \textbf{1st Place Winner}\\(National / Hackathon Event, 2024)
+    \item[\color{accent}\textbullet] \textbf{Cloud Solutions Certification}\\-- Cloud Provider (AWS / GCP)
+    \item[\color{accent}\textbullet] \textbf{Full Stack Web Specialization}\\-- Online Academy
+    \item[\color{accent}\textbullet] \textbf{Agile \& Scrum Fundamentals}\\-- Industry Certification
+  \end{itemize}
+  }
+
+\end{minipage}
+\end{leftcolumn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  RIGHT COLUMN  (main content)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{rightcolumn}
+\hspace{10pt}\begin{minipage}[t]{\dimexpr\linewidth-20pt}
+\vspace{16pt}
+
+% ---- Projects ----
+\section{Projects}
+
+\entry{Cloud Microservices Platform}%
+      {Go \textbullet{} Docker \textbullet{} Kubernetes \textbullet{} PostgreSQL}%
+      {\href{https://github.com/yourusername/project1}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Architected a high-throughput microservices backend in \textbf{Go} and \textbf{Docker}, supporting \textbf{10,000+} requests/sec with low tail latencies.
+  \item Engineered an event-driven messaging queue with \textbf{RabbitMQ}, reducing peak database write overhead by \textbf{70\%}.
+  \item Implemented automated health probes, zero-downtime rolling deployments, and container orchestration via \textbf{Kubernetes}.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{Deep Learning Computer Vision System}%
+      {PyTorch \textbullet{} OpenCV \textbullet{} CUDA \textbullet{} Python}%
+      {\href{https://github.com/yourusername/project2}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Developed and trained a convolutional neural network in \textbf{PyTorch} on DIV2K and ImageNet, achieving \textbf{95.2\%} validation accuracy.
+  \item Implemented mixed-precision inference (\texttt{float16}) with TensorRT, accelerating frame rates from \textbf{22 FPS to 65 FPS} on embedded hardware.
+  \item Built a modular data ingestion and augmentation pipeline processing \textbf{50k+} training samples with custom transformation layers.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{Full-Stack Analytics Dashboard}%
+      {TypeScript \textbullet{} React \textbullet{} Node.js \textbullet{} TailwindCSS}%
+      {\href{https://github.com/yourusername/project3}{\faIcon{github}~GitHub}}%
+      {}
+\begin{bullets}
+  \item Engineered an interactive real-time telemetry dashboard using \textbf{React} and \textbf{TypeScript}, visualizing dynamic data streams via WebSockets.
+  \item Designed RESTful API endpoints and optimized database queries in \textbf{PostgreSQL}, slashing query response times from \textbf{800ms to 45ms}.
+  \item Implemented role-based access control (RBAC), JWT session management, and automated end-to-end integration tests.
+\end{bullets}
+
+\vspace{4pt}
+
+% ---- Extracurricular ----
+\section{Extracurricular \& Leadership}
+
+\entry{Student Technical Society}{Lead Coordinator}{University Name}{Aug 2023 -- Present}
+\begin{bullets}
+  \item Directed technical operations and hands-on workshops for \textbf{250+} student members, mentoring peers in modern software development.
+  \item Managed the club's open-source projects, community code reviews, and digital communication channels.
+\end{bullets}
+
+\vspace{4pt}
+
+\entry{Regional Hackathon}{Organizer \& Technical Volunteer}{City / Campus}{March 2024}
+\begin{bullets}
+  \item Supervised technical infrastructure, developer tooling, and API key provisioning for \textbf{40+} participating teams.
+  \item Collaborated with industry judges and faculty organizers to facilitate team evaluation and smooth event execution.
+\end{bullets}
+
+\end{minipage}
+\end{rightcolumn}
+
+\end{paracol}
+\end{document}

@@ -1,0 +1,194 @@
+%-------------------------
+% Resume in Latex
+% Based on Jake's Resume Template
+% ATS-Friendly Single Column Template
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.6in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\pdfgentounicode=1
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\Large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1\vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.3in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================
+\begin{document}
+
+%-----------HEADING-----------
+\begin{center}
+  {\Huge \scshape \textbf{Your Name}} \\ \vspace{6pt}
+  \small
+  \faIcon{mobile}~\href{tel:+1234567890}{+1 (234) 567-8900}~$|$~
+  \faIcon{envelope}~\href{mailto:your.email@example.com}{your.email@example.com}~$|$~
+  \faIcon{linkedin}~\href{https://linkedin.com/in/yourprofile}{linkedin.com/in/yourprofile}~$|$~
+  \faIcon{github}~\href{https://github.com/yourusername}{github.com/yourusername}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {University / College Name}{City, State / Country}
+    {Bachelor of Science in Computer Science}{Aug 2022 -- Present}
+  \resumeItemListStart
+    \resumeItem{GPA: \textbf{3.9 / 4.0} (or equivalent honors/awards)}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {High School / Secondary Education}{City, State / Country}
+    {High School Diploma}{Aug 2020 -- May 2022}
+  \resumeItemListStart
+    \resumeItem{Graduated with \textbf{Honors / Distinction} (Top 5\% of class).}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Project Name 1 (Scalable Cloud Architecture)} $|$ \emph{Tech Stack 1, Tech Stack 2, Cloud}}
+    {\href{https://github.com/yourusername/project1}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Architected a high-throughput backend data pipeline using \textbf{FastAPI} and \textbf{PostgreSQL}, reducing query latency by \textbf{40\%} across \textbf{100k+} records.}
+    \resumeItem{Engineered an on-demand caching tier with \textbf{Redis}, decreasing payload sizes by \textbf{85\%} and eliminating API rate-limit bottlenecks.}
+    \resumeItem{Containerized the service with \textbf{Docker} and configured automated CI/CD pipelines via \textbf{GitHub Actions} for zero-downtime deployments.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Project Name 2 (Machine Learning / Deep Learning)} $|$ \emph{PyTorch, Python, NumPy, Pandas}}
+    {\href{https://github.com/yourusername/project2}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Implemented an end-to-end computer vision / RL model from scratch in \textbf{PyTorch}, achieving \textbf{94.5\%} accuracy on benchmark validation datasets.}
+    \resumeItem{Optimized inference throughput using mixed-precision training (\texttt{float16}) and CUDA kernel optimizations, halving GPU VRAM memory usage.}
+    \resumeItem{Built an interactive visualization dashboard displaying metrics, loss convergence, and real-time inference results.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Project Name 3 (Full-Stack Web Application)} $|$ \emph{TypeScript, React, Node.js, TailwindCSS}}
+    {\href{https://github.com/yourusername/project3}{\faIcon{github} GitHub}}
+  \resumeItemListStart
+    \resumeItem{Developed a responsive full-stack platform serving \textbf{5,000+} monthly active users with authentication and real-time updates.}
+    \resumeItem{Designed modular RESTful APIs and database schemas with relational data integrity and automated unit testing (\textbf{90\%+} coverage).}
+    \resumeItem{Implemented client-side caching and performance optimizations, reducing Initial Page Load time from \textbf{2.4s to 0.6s}.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Python, TypeScript, JavaScript, C++, Java, SQL, HTML/CSS, LaTeX \\
+    \textbf{Frameworks \& Libraries:} React, Next.js, Node.js, FastAPI, PyTorch, TensorFlow, Express.js, Pandas, NumPy \\
+    \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Redis, SQLite \\
+    \textbf{Tools \& Cloud:} Git, Docker, GitHub Actions, Linux (Bash/CLI), AWS / GCP, VS Code, Postman \\
+    \textbf{Core Concepts:} Data Structures \& Algorithms, System Design, REST APIs, CI/CD, Agile / Scrum
+  }}
+\end{itemize}
+
+\vspace{-12pt}
+
+%-----------LEADERSHIP & EXTRACURRICULAR-----------
+\section{Leadership \& Extracurricular}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Student Technical Club / Society}{University Name}
+    {Technical Lead / Core Organizer}{Month 2023 -- Present}
+  \resumeItemListStart
+    \resumeItem{Organized technical workshops and hackathons for \textbf{300+} student participants, managing mentorship sessions and judging criteria.}
+    \resumeItem{Led a team of \textbf{8} contributors developing and maintaining open-source web applications and community tools.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Annual Hackathon / Tech Fest}{City / University}
+    {Lead Coordinator / Volunteer}{Month 2024}
+  \resumeItemListStart
+    \resumeItem{Coordinated event operations and technical support across \textbf{50+} hackathon teams under strict deadlines.}
+    \resumeItem{Collaborated with corporate sponsors and faculty advisors to ensure smooth logistics and technical resources.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications \& Honors}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{1st Place Winner} -- National / University Hackathon Competition (2024) \\
+    \textbf{Certified Solutions Architect / Developer} -- Cloud Provider (AWS / GCP / Azure) \\
+    \textbf{Full-Stack Web Development Specialization} -- Recognized Academy / Online Platform \\
+    \textbf{Dean's Honor List / Academic Merit Scholarship} -- University Name
+  }}
+\end{itemize}
+
+\end{document}

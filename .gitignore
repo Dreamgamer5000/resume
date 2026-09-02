@@ -4,11 +4,30 @@
 # Whitelist directories
 !*/
 
-# Whitelist only PDF files and .gitignore
+# Whitelist PDFs and .gitignore
 !*.pdf
 !*/*.pdf
 !.gitignore
 
-# Blacklist old folder and everything inside it
+# Whitelist automation scripts, documentation & templates
+!build.sh
+!upload.sh
+!upload_gdrive.py
+!requirements.txt
+!.env.example
+!README.md
+!template/
+!template/**
+
+# Strict blacklists for secrets (never upload to git)
+.env
+*.env
+*.json
+token.json
+client_secret.json
+.venv/
+__pycache__/
+
+# Blacklist old folder
 old/
 old/**
